@@ -5,7 +5,7 @@ Mail: manuelmansilla2004@gmail.com
 
 La "tienda de aromas" ofrece un servicio comercial con la posibilidad de seleccionar productos que el usuario desee. Las compras engloban objetos que puedan aromatizar ambientes y el cuerpo, como fragancias textiles, perfumes, etc.
 
-```text
+```DER
 +-------------------+       1      N      +-------------------+
 |     CATEGORIA     |---------------------|     PRODUCTO      |
 +-------------------+                     +-------------------+
