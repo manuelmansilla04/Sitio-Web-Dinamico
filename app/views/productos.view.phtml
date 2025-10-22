@@ -1,0 +1,26 @@
+<?php
+    class ProductosView {
+        function showProductos($productos, $categoria, $error, $user){
+            require_once '././templates/lista_productos.phtml';
+        }
+        
+        function showAllProductos($productos,$categorias, $error, $user){
+            require_once '././templates/productos.phtml';
+        }
+
+        function showProductoByID($producto, $error, $user){
+            require_once '././templates/producto.phtml';
+        }
+        function showProductosABM($productos,$categorias,$error,$user){
+            require_once '././templates/panel_productos.phtml';
+        }
+        function showError($error, $user) {
+        echo "<h1>$error</h1>";
+    }
+
+        function showFormEdit($producto,$categorias,$error,$user){
+            require_once '././templates/form_productos_edit.phtml';
+        }
+
+    }
+?>  

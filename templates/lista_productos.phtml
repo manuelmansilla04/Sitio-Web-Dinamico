@@ -1,0 +1,38 @@
+<?php require_once 'layout/header.phtml' ?>
+<div class="container text-center">
+<div class="row">
+<div>
+    <?php $n=1;?>
+        <p> 
+            <h3><?=$categoria->nombre?></h3></br>
+            Descripcion <?=$categoria->descripcion?></br>
+        </p>
+</div>
+<div> 
+    <table class="table">
+        <tr>
+            <td>NOMBRE</td>
+            <td>DESCRIPCION</td>
+            <td>PRECIO</td>
+            <td>STOCK</td>
+            <td>FECHA DE ALTA</td>
+            <td>ACCION</td>
+        </tr>
+        <?php foreach ($productos as $producto):?>
+        <tr>
+            <td><?=$producto->nombre?></td>
+            <td><?=$producto->descripcion?></td>
+            <td><?=$producto->precio?></td>
+            <td><?=$producto->stock?></td>
+            <td><?=$producto->fecha_alta?></td>
+            <td><a href='productos/<?=$producto->id_producto?>'>Ver Detalle</a></td> 
+            <?php $n++;?>
+        </tr>
+            <?php endforeach; ?>
+    </table>
+</div>
+</div>
+</div>
+<a href="list_categorias">VOLVER</a>
+
+<?php require_once 'layout/footer.phtml' ?>

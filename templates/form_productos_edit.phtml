@@ -1,0 +1,22 @@
+<?php require_once 'layout/header.phtml' ?>
+
+    <form action="editProducto/<?= $producto->id_producto?>" method="POST">
+        <select name="name">
+            <?php foreach($categorias as $categoria):?>
+            <option value=<?=$categoria->id_categoria?>><?=$categoria->nombre?></option>
+            <?php endforeach; ?>
+        </select></br>
+        <label>Nombre</label>
+        <input type="text" name="nombre_producto" value=<?=$producto->nombre?>></br>    
+        <label>Descripcion</label>
+        <input type="text" name="descripcion" value=<?=$producto->descripcion?>></br>
+        <label>Precio</label>
+        <input type="text" name="precio" value=<?=$producto->precio?>></br>
+        <label>Stock</label>
+        <input type="text" name="stock" value=<?=$producto->stock?>></br>
+        <label>FechaDeAlta</label>
+        <input type="text" name="fechaDeAlta" value=<?=$producto->fecha_alta?>></br>
+        <button type="submit">AGREGAR</button>
+    </form>
+
+<?php require_once 'layout/footer.phtml' ?>

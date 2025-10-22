@@ -1,0 +1,36 @@
+<?php require_once 'layout/header.phtml' ?>
+
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">CATEGORIA</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">PRECIO</th>
+            <th scope="col">STOCK DISPONIBLE</th>
+            <th scope="col">FECHA DE ALTA</th>
+            <th scope="col">ACCION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($productos as $producto):?>
+        <tr>
+            <?php foreach ($categorias as $categoria): ?>
+            <?php if ($categoria->id_categoria === $producto->id_categoria): ?>
+            <td><?=$categoria->nombre?></td>
+            <?php endif;?>
+            <?php endforeach;?>
+            <td><?=$producto->nombre?></td>
+            <td><?=$producto->precio?></td>
+            <td><?=$producto->stock?></td>
+            <td><?=$producto->fecha_alta?></td>
+            <td><a href='productos/<?=$producto->id_producto?>'>Ver Detalle</a></td> 
+        </tr>
+            <?php endforeach; ?>
+            </tbody>
+    </table>
+    
+    <a href="home">VOLVER</a>
+</div>
+
+<?php require_once 'layout/footer.phtml' ?>
