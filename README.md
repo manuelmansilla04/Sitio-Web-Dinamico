@@ -1,4 +1,4 @@
-# tpe-web-2
+# Sitio-Web-Dinamico: Tienda de Aromas (Web 2)
 GRUPO 39
 Alumno: Franco Manuel Mansilla
 
