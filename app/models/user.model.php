@@ -1,0 +1,37 @@
+<?php 
+require_once './app/models/model.php';
+
+class UserModel extends Model{
+
+    function __construct() {
+        parent::__construct(); 
+    }
+
+    public function get($id) {
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE ID = ?');
+        $query->execute([$id]);
+        $user = $query->fetch(PDO::FETCH_OBJ);
+        return $user;
+    }
+
+    public function getByUser($user) {
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE user_name = ?');
+        $query->execute([$user]);
+        $user = $query->fetch(PDO::FETCH_OBJ);
+        return $user;
+    }
+    
+    public function getAll() {
+        $query = $this->db->prepare('SELECT * FROM usuarios');
+        $query->execute();
+        $users = $query->fetchAll(PDO::FETCH_OBJ);
+        return $users;
+    }
+
+    function insert($name, $password) {
+        $query = $this->db->prepare("INSERT INTO usuarios(user_name, password) VALUES(?,?)");
+        $query->execute([$name, $password]);
+        return $this->db->lastInsertId();
+    }
+
+}

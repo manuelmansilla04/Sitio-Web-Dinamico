@@ -1,0 +1,27 @@
+<?php
+$title = 'Ensueño | Tienda de Aromas';
+require_once __DIR__ . '/header.phtml';
+?>
+
+<div class="wrapper">
+    <main>
+        <article class="main-portada">
+            <img class="main-portada-Mobile" src="<?= BASE_URL ?>images/portadaMobile.jpg" alt="portadaMobile" />
+            <img class="main-portada-Desktop" src="<?= BASE_URL ?>images/portadaDesktop.jpg" alt="portadaDesktop" />
+            <h1 class="main-portada-titulo">Lo esencial que necesita tu hogar</h1>
+            <p class="main-portada-parrafo">
+                Nuestros productos están pensados para tener un momento de relax, compartir con amigos y familia, o simplemente para disfrutar un momento de paz.
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="pie">
+            <h2><a href="<?= BASE_URL ?>list_categorias">Categorias</a></h2>
+            <img class="img-pie" src="<?= BASE_URL ?>images/RRSS.jpeg" alt="Redes Sociales" />
+            <h2><a href="<?= BASE_URL ?>productos">Productos</a></h2>
+        </div>
+    </footer>
+</div>
+
+<?php require_once __DIR__ . '/footer.phtml'; ?>

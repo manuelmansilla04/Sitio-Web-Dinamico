@@ -1,0 +1,23 @@
+<?php require_once __DIR__ . '/layout/header.phtml' ?>
+
+    <form action="editProducto/<?= $producto->id_producto?>" method="POST">        
+        <select name="nombreCategoria">
+            <?php foreach($categorias as $categoria):?>
+            <option value=<?=$categoria->id_categoria?>><?=$categoria->nombre?></option>
+            <?php endforeach; ?>
+        </select></br>
+        <label>Nombre</label>
+        <input type="text" name="nombre" value=<?=$producto->nombre?>></br>    
+        <label>Descripción</label>
+        <input type="text" name="descripcion" value=<?=$producto->descripcion?>></br>    
+        <label>Precio</label>
+        <input type="text" name="precio" value=<?=$producto->precio?>></br>
+        <label>Stock</label>
+        <input type="text" name="stock" value=<?=$producto->stock?>></br>
+        <label>Fecha</label>
+        <input type="text" name="fecha_alta" value=<?=$producto->fecha_alta?>></br>
+        
+        <button type="submit">CONFIRMAR</button>
+    </form>
+
+<?php require_once __DIR__ . '/layout/footer.phtml' ?>

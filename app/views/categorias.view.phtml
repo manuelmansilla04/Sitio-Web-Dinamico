@@ -1,0 +1,29 @@
+<?php
+
+class CategoriasView {
+    //El constructor de conexión con la db "function __construct()" no lo pongo pues es implícito. Php lo hará sólo.
+    
+    function showCategorias($categorias, $error, $user){
+        require_once '././templates/categorias_list.phtml';
+    }
+
+    function showCategoriaByID($categoria,$productos, $error, $user){
+        require_once '././templates/lista_productos.phtml';
+    }
+
+    function showFormCategorias(){
+        require_once '././templates/add_categoria.php';
+    }
+
+    function showFormEdit($s, $user){
+        require_once '././templates/edit_categoria.php';
+    }
+
+    function showError($error,$user){
+        echo "<p>$error</p>";
+    }
+
+    function showMsg($msg){
+        echo "<p>$msg</p>";
+    }
+}
