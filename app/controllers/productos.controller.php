@@ -68,7 +68,7 @@
             if (!$add) {
                 return $this->View->showError('Error al insertar tarea', $request->user);
             }
-            header('Location: ' . BASE_URL);
+            header('Location: ' . BASE_URL . '?action=administrarProductos');
         }   
         
         public function deleteProducto($request) {
@@ -78,7 +78,7 @@
                 return $this->View->showError('Error no existe ese producto', $request->user);
             }
             $this->Model->deleteProducto($id_product);
-            header('Location: ' . BASE_URL);
+            header('Location: ' . BASE_URL . '?action=administrarProductos');
         }
 
         public function editProducto($request) {
