@@ -38,7 +38,7 @@ class CategoriasController {
                 $synopsis = $_POST['synopsis'];
                 $img = $_POST['img'];
                 $this->model->insertCategoria($title, $synopsis, $img);
-                header('Location: ' . BASE_URL);
+                header('Location: ' . BASE_URL . '?action=panel_admin');
             } else {
                 $this->view->showError('Error: faltan campos obligatorios', $request->user);
             }
@@ -54,7 +54,7 @@ class CategoriasController {
                 $synopsis = $_POST['synopsis'];
                 $img = $_POST['img'];
                 $this->model->updateCategoria($categoriaId, $title, $synopsis, $img);
-                header('Location: ' . BASE_URL);
+                header('Location: ' . BASE_URL . '?action=panel_admin');
             } else {
                 $this->view->showError('Error: faltan campos obligatorios', $request->user);
             }
@@ -73,7 +73,7 @@ class CategoriasController {
             if (empty($productos)){
                 $this->model->deleteCategoria($categoriaId);
                 //$this->view->showMsg('Categoria eliminada con éxito', $request->user);
-                header('Location: ' . BASE_URL);
+                header('Location: ' . BASE_URL . '?action=panel_admin');
             } else {
                 $this->view->showError('Error: hay productos en esta categoría. Retirelos antes de eliminar la presente categoría.', $request->user);        
             }
